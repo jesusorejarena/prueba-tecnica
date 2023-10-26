@@ -1,10 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Badge } from 'flowbite-react';
 import CardBodyInfo from '../CardBodyInfo';
 import { useParams } from 'react-router-dom';
 import { extractPart } from '../../../utils';
+import { CardBodyProps } from '../../../types/components';
 
-const CardBodyPlanets = ({ item }: any) => {
+const CardBodyPlanets = ({ item }: CardBodyProps) => {
 	const { id } = useParams();
 
 	const include = [
@@ -26,7 +26,7 @@ const CardBodyPlanets = ({ item }: any) => {
 			</h5>
 			<p className="font-normal text-gray-700 dark:text-gray-400">
 				<ul className="capitalize">
-					{Object.keys(item).map((key: any, index: number) => {
+					{Object.keys(item).map((key: string, index: number) => {
 						if (include.includes(key))
 							return (
 								<CardBodyInfo key={index} title={key} value={key === 'residents' ? item[key].length : item[key]} />
@@ -49,7 +49,7 @@ const CardBodyPlanets = ({ item }: any) => {
 
 			{id && (
 				<div className="flex flex-wrap items-center gap-5 justify-center mt-5">
-					{item.residents.map((resident: any, index: number) => (
+					{item.residents.map((resident: string, index: number) => (
 						<a href={`/all/people/details${extractPart(resident)}`}>
 							<div className="bg-blue-500 rounded-3xl px-2 py-1 flex items-center text-white">User {index + 1}</div>
 						</a>

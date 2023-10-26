@@ -1,8 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { ItemsProps } from '../types/components';
+import { PersonProps } from '../types/people';
+import { PlanetProps } from '../types/planets';
+import { StarshipProps } from '../types/starships';
 
-export const searchFilter = (listDetails: any, search: any, type: string) => {
+export const searchFilter = (listDetails: ItemsProps[], search: string, type: string) => {
 	if (type === 'people')
-		return listDetails.filter((item: any) => {
+		return listDetails.filter((item: PersonProps | any) => {
 			const searchTerm = search.toUpperCase();
 			return (
 				item.name.toUpperCase().includes(searchTerm) ||
@@ -17,7 +21,7 @@ export const searchFilter = (listDetails: any, search: any, type: string) => {
 		});
 
 	if (type === 'planets')
-		return listDetails.filter((item: any) => {
+		return listDetails.filter((item: PlanetProps | any) => {
 			const searchTerm = search.toUpperCase();
 			return (
 				item.rotation_period.toUpperCase().includes(searchTerm) ||
@@ -32,7 +36,7 @@ export const searchFilter = (listDetails: any, search: any, type: string) => {
 		});
 
 	if (type === 'starships')
-		return listDetails.filter((item: any) => {
+		return listDetails.filter((item: StarshipProps | any) => {
 			const searchTerm = search.toUpperCase();
 			return (
 				item.model.toUpperCase().includes(searchTerm) ||

@@ -1,8 +1,8 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Badge } from 'flowbite-react';
 import CardBodyInfo from '../CardBodyInfo';
+import { CardBodyProps } from '../../../types/components';
 
-const CardBodyStarships = ({ item }: any) => {
+const CardBodyStarships = ({ item }: CardBodyProps) => {
 	const include = [
 		'model',
 		'manufacturer',
@@ -25,7 +25,7 @@ const CardBodyStarships = ({ item }: any) => {
 			</h5>
 			<p className="font-normal text-gray-700 dark:text-gray-400">
 				<ul className="capitalize">
-					{Object.keys(item).map((key: any, index: number) => {
+					{Object.keys(item).map((key: string, index: number) => {
 						if (include.includes(key))
 							return (
 								<CardBodyInfo key={index} title={key} value={key === 'residents' ? item[key].length : item[key]} />

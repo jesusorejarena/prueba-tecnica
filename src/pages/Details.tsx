@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { FunctionComponent, useEffect, useState } from 'react';
 import { Card } from 'flowbite-react';
 import { useParams } from 'react-router-dom';
@@ -10,17 +9,21 @@ import { starshipsByIdAPI } from '../services/starships';
 import CardBodyPeople from '../components/Card/CardBodyPeople';
 import CardBodyPlanets from '../components/Card/CardBodyPlanets';
 import CardBodyStarships from '../components/Card/CardBodyStarships';
+import { PersonProps } from '../types/people';
+import { PlanetProps } from '../types/planets';
+import { StarshipProps } from '../types/starships';
+import { ItemsProps } from '../types/components';
 
 const Details: FunctionComponent = () => {
 	const { id, category } = useParams();
 
-	const [details, setDetails] = useState();
+	const [details, setDetails] = useState<ItemsProps>();
 
 	useEffect(() => {
 		const effect = async () => {
 			if (category === 'people')
 				try {
-					const response: any = await peopleByIdAPI(id ?? '0');
+					const response: PersonProps = await peopleByIdAPI(id ?? '0');
 
 					setDetails(response);
 				} catch (error) {
@@ -29,7 +32,7 @@ const Details: FunctionComponent = () => {
 
 			if (category === 'planets')
 				try {
-					const response: any = await planetsByIdAPI(id ?? '0');
+					const response: PlanetProps = await planetsByIdAPI(id ?? '0');
 
 					setDetails(response);
 				} catch (error) {
@@ -38,7 +41,7 @@ const Details: FunctionComponent = () => {
 
 			if (category === 'starships')
 				try {
-					const response: any = await starshipsByIdAPI(id ?? '0');
+					const response: StarshipProps = await starshipsByIdAPI(id ?? '0');
 
 					setDetails(response);
 				} catch (error) {

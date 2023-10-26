@@ -1,8 +1,8 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { TextInput } from 'flowbite-react';
 import { FaSearch } from 'react-icons/fa';
+import { InputSearchProps } from '../../types/components';
 
-export default function InputSearch({ search, setSearch }: any) {
+export default function InputSearch({ search, setSearch }: InputSearchProps) {
 	return (
 		<TextInput
 			type="text"

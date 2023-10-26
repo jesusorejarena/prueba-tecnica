@@ -1,11 +1,11 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Card as CardTemplate } from 'flowbite-react';
 import { Link } from 'react-router-dom';
 import CardBodyPeople from './CardBodyPeople';
 import CardBodyPlanets from './CardBodyPlanets';
 import CardBodyStarships from './CardBodyStarships';
+import { CardProps } from '../../types/components';
 
-const Card = ({ item, to, type }: any) => {
+const Card = ({ item, to, type }: CardProps) => {
 	return (
 		<Link to={to}>
 			<CardTemplate

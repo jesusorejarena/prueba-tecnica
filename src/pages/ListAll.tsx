@@ -1,5 +1,5 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react-hooks/exhaustive-deps */
 import { FunctionComponent, useEffect, useState } from 'react';
 import Card from '../components/Card';
 import { toast } from 'sonner';
@@ -11,11 +11,23 @@ import { extractPart } from '../utils';
 import InputSearch from '../components/Commons/InputSearch';
 import { searchFilter } from '../utils/search';
 import { Pagination } from 'flowbite-react';
+import { ItemsProps, ItemsResponseProps } from '../types/components';
+
 const ListAll: FunctionComponent = () => {
 	const { category } = useParams();
 
-	const [listDetails, setListDetails] = useState<any>({});
-	const [listDetailsCopy, setListDetailsCopy] = useState<any>({});
+	const [listDetails, setListDetails] = useState<ItemsResponseProps>({
+		count: 0,
+		next: '',
+		previous: '',
+		results: [],
+	});
+	const [listDetailsCopy, setListDetailsCopy] = useState<ItemsResponseProps>({
+		count: 0,
+		next: '',
+		previous: '',
+		results: [],
+	});
 	const [search, setSearch] = useState('');
 	const [currentPage, setCurrentPage] = useState(1);
 	const onPageChange = (page: number) => {
@@ -64,7 +76,7 @@ const ListAll: FunctionComponent = () => {
 	useEffect(() => {
 		if (search === '') setListDetailsCopy(listDetails);
 		else {
-			const newList = searchFilter(listDetails.results, search, category ?? '');
+			const newList: any = searchFilter(listDetails.results, search, category ?? '');
 
 			setListDetailsCopy({ ...listDetailsCopy, results: newList });
 		}
@@ -79,8 +91,13 @@ const ListAll: FunctionComponent = () => {
 			<div className="my-5 border-t-2 border-gray-400 w-[300px]" />
 			<div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-8">
 				{listDetailsCopy?.results &&
-					listDetailsCopy.results.map((item: any, index: number) => (
-						<Card key={index} item={item} to={`/all/${category}/details${extractPart(item.url)}`} type={category} />
+					listDetailsCopy.results.map((item: ItemsProps, index: number) => (
+						<Card
+							key={index}
+							item={item}
+							to={`/all/${category}/details${extractPart(item.url)}`}
+							type={category ?? ''}
+						/>
 					))}
 			</div>
 

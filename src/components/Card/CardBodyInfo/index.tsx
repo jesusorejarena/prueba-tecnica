@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import { CardBodyInfoProps } from '../../../types/components';
 
-const CardBodyInfo = ({ title, value }: any) => {
+const CardBodyInfo = ({ title, value }: CardBodyInfoProps) => {
 	return (
 		<li>
 			<span className="font-bold">{title.replaceAll('_', ' ')}:</span> {value}
