@@ -10,7 +10,7 @@ const Layout: FunctionComponent = () => {
 			<Navbar />
 
 			<main className="mt-5 mb-20 flex flex-col gap-y-10 min-h-screen">
-				<div className="px-4 flex-1 mx-auto max-w-screen-xl w-full">
+				<div className="px-4 flex-1 mx-auto max-w-screen-md xl:max-w-screen-xl w-full">
 					<Outlet />
 				</div>
 			</main>

@@ -47,7 +47,7 @@ const Landing: FunctionComponent = () => {
 
 	return (
 		<div className="mt-5">
-			<div className="">
+			<div className="flex flex-col items-center lg:items-start">
 				<h2 className="text-3xl font-bold">People</h2>
 				<div className="my-5 border-t-2 border-gray-400 w-[300px]" />
 				<div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 mt-8">
@@ -57,7 +57,7 @@ const Landing: FunctionComponent = () => {
 					<CardViewAll to="/all/people" />
 				</div>
 			</div>
-			<div className="mt-24">
+			<div className="flex flex-col items-center lg:items-start mt-24">
 				<h2 className="text-3xl font-bold">Planets</h2>
 				<div className="my-5 border-t-2 border-gray-400 w-[300px]" />
 				<div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 mt-8">
@@ -67,7 +67,7 @@ const Landing: FunctionComponent = () => {
 					<CardViewAll to="/all/planets" />
 				</div>
 			</div>
-			<div className="mt-24">
+			<div className="flex flex-col items-center lg:items-start mt-24">
 				<h2 className="text-3xl font-bold">Starships</h2>
 				<div className="my-5 border-t-2 border-gray-400 w-[300px]" />
 				<div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 mt-8">
