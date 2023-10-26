@@ -36,3 +36,9 @@ Siga estos pasos para iniciar el proyecto en su máquina local:
    ```bash
    npm run dev
    ```
+
+5. **Ver proyecto en vivo**
+
+   ```text
+   https://prueba-tecnica-fawn.vercel.app/
+   ```
