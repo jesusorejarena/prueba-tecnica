@@ -1,27 +1,38 @@
-# React + TypeScript + Vite
+# Proyecto de React con Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es un proyecto de React creado con Vite, un entorno de desarrollo rápido para aplicaciones web con React. A continuación, encontrarás instrucciones sobre cómo configurar y ejecutar el proyecto.
 
-Currently, two official plugins are available:
+## Instrucciones de Inicio
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Siga estos pasos para iniciar el proyecto en su máquina local:
 
-## Expanding the ESLint configuration
+1. **Clonar el repositorio**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+   Abre tu terminal y clona este repositorio en tu directorio de trabajo local:
 
-- Configure the top-level `parserOptions` property like this:
+   ```bash
+   git clone https://github.com/jesusorejarena/prueba-tecnica.git
+   ```
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+2. **Agregar variables de entorno**
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+   Crea un archivo .env.development y pega esta información:
+
+   ```env
+   NODE_ENV="development"
+   VITE_APP_TITLE="Prueba tecnica"
+
+   VITE_APP_URL="https://swapi.dev/api/"
+   ```
+
+3. **Ejecuta este comando para instalar las dependecias**
+
+   ```bash
+   npm i
+   ```
+
+4. **Correr proyecto**
+
+   ```bash
+   npm run dev
+   ```
