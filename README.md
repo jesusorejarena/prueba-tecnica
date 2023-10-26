@@ -2,6 +2,10 @@
 
 Este es un proyecto de React creado con Vite, un entorno de desarrollo rápido para aplicaciones web con React. A continuación, encontrarás instrucciones sobre cómo configurar y ejecutar el proyecto.
 
+## Errores encontrados
+
+Las API que proporcionaron no funcionan correctamente, tarda casi 7 segundos en realizar una petición. Entonces lo que hice fue hacer toda la estructura para el axios, pero en el return le pegue la información moqueada para que pudiera funcionar correctamente.
+
 ## Instrucciones de Inicio
 
 Siga estos pasos para iniciar el proyecto en su máquina local:

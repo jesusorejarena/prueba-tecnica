@@ -24,6 +24,7 @@ export const searchFilter = (listDetails: ItemsProps[], search: string, type: st
 		return listDetails.filter((item: PlanetProps | any) => {
 			const searchTerm = search.toUpperCase();
 			return (
+				item.name.toUpperCase().includes(searchTerm) ||
 				item.rotation_period.toUpperCase().includes(searchTerm) ||
 				item.orbital_period.toUpperCase().includes(searchTerm) ||
 				item.diameter.toUpperCase().includes(searchTerm) ||
@@ -39,6 +40,7 @@ export const searchFilter = (listDetails: ItemsProps[], search: string, type: st
 		return listDetails.filter((item: StarshipProps | any) => {
 			const searchTerm = search.toUpperCase();
 			return (
+				item.name.toUpperCase().includes(searchTerm) ||
 				item.model.toUpperCase().includes(searchTerm) ||
 				item.manufacturer.toUpperCase().includes(searchTerm) ||
 				item.cost_in_credits.toUpperCase().includes(searchTerm) ||
